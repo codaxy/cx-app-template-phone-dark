@@ -1,0 +1,23 @@
+$cx-include-global-rules: true;
+
+@import "~cx-theme-dark/src/variables";
+
+
+$cx-element-style-map: cx-deep-map-merge($cx-element-style-map, (
+    html: (
+        background: white,
+    ),
+    body: (
+        max-width: 500px,
+        max-height: 1024px,
+        background: black,
+        margin: auto
+    )
+));
+
+
+@import "~cx-theme-dark/src/index";
+
+@import "components/index";
+@import "layout/index";
+@import "routes/index";
