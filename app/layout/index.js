@@ -8,10 +8,10 @@ export default (
         <div controller={Controller} class="layout">
             <header className="header">
                 <ContentPlaceholder name="header">
-                    Header
+                    <h2>Default Header</h2>
                 </ContentPlaceholder>
             </header>
-            <main class="main" onMouseDownCapture="onMainClick">
+            <main class="main">
                 <ContentPlaceholder />
             </main>
             <footer className="footer">

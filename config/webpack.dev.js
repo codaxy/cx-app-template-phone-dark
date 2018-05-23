@@ -32,6 +32,7 @@ module.exports = merge(common, {
         port: 8765,
         noInfo: false,
         inline: true,
-        historyApiFallback: true
+        historyApiFallback: true,
+        host: "0.0.0.0"
     }
 });

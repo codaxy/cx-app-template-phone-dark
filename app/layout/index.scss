@@ -9,16 +9,16 @@
 }
 
 .header {
-    padding: 1.5em;
     background: rgba(white, 0.2);
     box-shadow: 0 2px 5px rgba(gray, 0.26);
-    display: flex;
     align-items: center;
+    padding: 0;
 
     h2 {
         line-height: 1;
         font-size: 1.5rem;
-        margin: 0;
+        font-weight: 200;
+        margin: 1.5rem;
         color: white;
     }
 }
@@ -27,6 +27,8 @@
     flex: 1 1 0;
     box-sizing: border-box;
     display: block;
+    overflow: auto;
+    position: relative;
 }
 
 .footer {

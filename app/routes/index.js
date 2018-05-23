@@ -4,8 +4,8 @@ import {FirstVisibleChildLayout} from "cx/ui";
 import AppLayout from "../layout";
 
 import Default from "./default";
-import About from "./about";
-import Dashboard from "./dashboard";
+import Prices from "./prices";
+import Calendar from "./calendar";
 
 export default () => <cx>
     <Sandbox
@@ -17,11 +17,11 @@ export default () => <cx>
         <Route route="~/" url-bind="url">
             <Default />
         </Route>
-        <Route route="~/about" url-bind="url">
-            <About />
+        <Route route="~/prices" url-bind="url">
+            <Prices />
         </Route>
-        <Route route="~/dashboard" url-bind="url">
-            <Dashboard />
+        <Route route="~/calendar" url-bind="url">
+            <Calendar />
         </Route>
         <Section title="Page Not Found" mod="card">
             This page doesn't exists. Please check your URL.
