@@ -1,0 +1,30 @@
+.cxb-price {
+
+    &.cxs-up {
+        animation: price-up 5s;
+    }
+
+    &.cxs-down {
+        animation: price-down 5s;
+    }
+}
+
+@keyframes price-up {
+    from {
+        color: #88EE88;
+    }
+
+    to {
+        color: currentColor;
+    }
+}
+
+@keyframes price-down {
+    from {
+        color: #FF8888;
+    }
+
+    to {
+        color: currentColor;
+    }
+}

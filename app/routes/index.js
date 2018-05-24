@@ -1,11 +1,20 @@
-import {Route, Section, Sandbox} from "cx/widgets";
+import {Route, Section, Sandbox, RedirectRoute} from "cx/widgets";
 import {FirstVisibleChildLayout} from "cx/ui";
 
 import AppLayout from "../layout";
 
-import Default from "./default";
+import About from "./about";
 import Prices from "./prices";
 import Calendar from "./calendar";
+
+/*
+TODO:
+ - Home -> About
+ - Login -> Logout
+ - Price click -> expand chart
+ - Phone book + edit
+ - Calendar
+*/
 
 export default () => <cx>
     <Sandbox
@@ -14,17 +23,18 @@ export default () => <cx>
         outerLayout={AppLayout}
         layout={FirstVisibleChildLayout}
     >
-        <Route route="~/" url-bind="url">
-            <Default />
-        </Route>
+        <RedirectRoute route="~/" url-bind="url" redirect="~/prices" />
         <Route route="~/prices" url-bind="url">
             <Prices />
         </Route>
         <Route route="~/calendar" url-bind="url">
             <Calendar />
         </Route>
-        <Section title="Page Not Found" mod="card">
-            This page doesn't exists. Please check your URL.
-        </Section>
+        <Route route="~/about" url-bind="url">
+            <About />
+        </Route>
+        <div style="padding: 1rem">
+            This page doesn't exist yet.
+        </div>
     </Sandbox>
 </cx>;

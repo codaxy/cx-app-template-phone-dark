@@ -43,7 +43,7 @@ function oneOf(list) {
 
 function tick() {
     let changes = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 5; i++) {
         let key = oneOf(pairs);
         let data = {...pairData[key]};
         data.change += Math.random() * 0.2 - 0.1;
