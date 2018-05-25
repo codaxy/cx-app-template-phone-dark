@@ -1,1 +1,40 @@
+.calendarview {
+    width: 100%;
+    color: rgba(white, 0.9);
 
+    border-spacing: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+    box-sizing: border-box;
+
+    th {
+        padding: .5rem;
+        text-align: center;
+        font-weight: 500;
+        font-size: 10px;
+        opacity: 0.5;
+    }
+
+    td {
+        padding: 1.5rem 0.5rem;
+        text-align: center;
+        position: relative;
+        border: 1px solid rgba(white, 0.1);
+        white-space: nowrap;
+        font-size: 12px;
+        height: 1.1rem;
+
+        &.selected {
+            background: orange;
+        }
+    }
+
+    .date {
+        font-weight: 500;
+        font-size: 10px;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        opacity: 0.5;
+    }
+}

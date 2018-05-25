@@ -1,4 +1,4 @@
-import {Route, Section, Sandbox, RedirectRoute} from "cx/widgets";
+import {Route, PureContainer, Sandbox, RedirectRoute} from "cx/widgets";
 import {FirstVisibleChildLayout} from "cx/ui";
 
 import AppLayout from "../layout";
@@ -6,6 +6,7 @@ import AppLayout from "../layout";
 import About from "./about";
 import Prices from "./prices";
 import Calendar from "./calendar";
+import Profile from "./profile";
 
 /*
 TODO:
@@ -23,15 +24,21 @@ export default () => <cx>
         outerLayout={AppLayout}
         layout={FirstVisibleChildLayout}
     >
-        <RedirectRoute route="~/" url-bind="url" redirect="~/prices" />
+        <RedirectRoute route="~/" url-bind="url" redirect="~/prices"/>
         <Route route="~/prices" url-bind="url">
-            <Prices />
-        </Route>
-        <Route route="~/calendar" url-bind="url">
-            <Calendar />
+            <Prices/>
         </Route>
         <Route route="~/about" url-bind="url">
-            <About />
+            <About/>
+        </Route>
+        <Route route="~/profile" url-bind="url">
+            <Profile/>
+        </Route>
+        <PureContainer visible-expr="!{user}">
+            <Profile/>
+        </PureContainer>
+        <Route route="~/calendar" url-bind="url">
+            <Calendar/>
         </Route>
         <div style="padding: 1rem">
             This page doesn't exist yet.

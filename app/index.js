@@ -7,6 +7,7 @@ import "./index.scss";
 
 //store
 const store = new Store();
+Auth.registerStore(store);
 
 //routing
 Url.setBaseFromScript("app*.js");
@@ -19,5 +20,6 @@ Debug.enable("app-data");
 
 //app loop
 import Routes from "./routes";
+import {Auth} from "./api/Auth";
 
 startHotAppLoop(module, document.getElementById("app"), store, Routes);

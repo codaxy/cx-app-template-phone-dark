@@ -1,4 +1,5 @@
 import {SubscriberList} from 'cx/util';
+import {oneOf} from "../../util/oneOf";
 
 const pairData = {};
 
@@ -34,11 +35,6 @@ function randomStr(length, characters) {
         s += characters[index];
     }
     return s;
-}
-
-function oneOf(list) {
-    let index = Math.floor(Math.random() * list.length);
-    return list[index];
 }
 
 function tick() {
