@@ -12,10 +12,7 @@ export default class extends Controller {
             }
             // console.log(data);
             changes.forEach(s => {
-                data[s.pair] = {
-                    ...data[s.pair],
-                    ...s
-                };
+                data[s.pair] = Object.assign({}, data[s.pair], s);
             });
             this.store.set('data', Object.keys(data).map(k => data[k]));
         });

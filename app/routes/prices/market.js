@@ -41,7 +41,7 @@ function tick() {
     let changes = [];
     for (let i = 0; i < 5; i++) {
         let key = oneOf(pairs);
-        let data = {...pairData[key]};
+        let data = Object.assign({}, pairData[key]);
         data.change += Math.random() * 0.2 - 0.1;
         data.prevPrice = data.price;
         data.price = (1 + data.change / 100) * data.basePrice;
