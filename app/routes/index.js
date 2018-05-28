@@ -7,6 +7,7 @@ import About from "./about";
 import Prices from "./prices";
 import Calendar from "./calendar";
 import Profile from "./profile";
+import Contacts from "./contacts";
 
 /*
 TODO:
@@ -39,6 +40,9 @@ export default () => <cx>
         </PureContainer>
         <Route route="~/calendar" url-bind="url">
             <Calendar/>
+        </Route>
+        <Route route="~/contacts" url-bind="url">
+            <Contacts/>
         </Route>
         <div style="padding: 1rem">
             This page doesn't exist yet.

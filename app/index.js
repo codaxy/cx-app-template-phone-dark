@@ -1,6 +1,7 @@
 import {Store} from "cx/data";
-import {Url, History, Widget, startHotAppLoop} from "cx/ui";
+import {Url, History, Widget, startHotAppLoop, enableCultureSensitiveFormatting} from "cx/ui";
 import {Timing, Debug} from "cx/util";
+enableCultureSensitiveFormatting();
 
 //css
 import "./index.scss";

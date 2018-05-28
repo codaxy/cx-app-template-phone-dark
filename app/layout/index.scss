@@ -10,7 +10,7 @@
 
 .header {
     background: rgba(white, 0.2);
-    box-shadow: 0 2px 5px rgba(gray, 0.26);
+    box-shadow: 0 2px 5px rgba(black, 0.26);
     align-items: center;
     padding: 0;
 
@@ -34,7 +34,7 @@
 .footer {
     background: rgba(white, 0.2);
     min-height: 2rem;
-    box-shadow: 0 -2px 5px rgba(gray, 0.26);
+    box-shadow: 0 -2px 5px rgba(black, 0.26);
     display: flex;
 }
 

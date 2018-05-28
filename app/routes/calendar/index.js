@@ -1,18 +1,17 @@
 import {FlexRow, FlexCol, Rescope, Button, Repeater, List} from "cx/widgets";
-import {enableCultureSensitiveFormatting} from "cx/ui";
-
-enableCultureSensitiveFormatting();
-
 import Controller from "./Controller";
+import {zeroTime} from "cx/util";
+import {enableCultureSensitiveFormatting} from "cx/ui";
+enableCultureSensitiveFormatting();
 
 export default <cx>
     <Rescope bind="$page" controller={Controller}>
         <FlexRow putInto="header" align="center">
-            <Button mod="hollow" icon="fa-arrow-left" style="margin-left: 15px"/>
+            <Button mod="hollow" icon="fa-arrow-left" style="margin-left: 15px" onClick="onSelectPrevDay"/>
             <div style="flex: 1 1 0"/>
             <h2 text-tpl="{month:datetime;DDDddMMMYYYY}"/>
             <div style="flex: 1 1 0"/>
-            <Button mod="hollow" icon="fa-arrow-right" style="margin-right: 15px"/>
+            <Button mod="hollow" icon="fa-arrow-right" style="margin-right: 15px" onClick="onSelectNextDay"/>
         </FlexRow>
         <FlexCol style="height: 100%">
             <table className="calendarview">
@@ -48,9 +47,19 @@ export default <cx>
                 </Repeater>
                 </tbody>
             </table>
-            <List records-bind="list" cached>
+            <List
+                records-bind="list"
+                cached
+                filterParams-bind="month"
+                onCreateFilter={date => {
+                    let start = zeroTime(new Date(date)).valueOf();
+                    let end = start + 24 * 60 * 60 * 1000;
+                    return record => record.time >= start && record.time < end;
+                }}
+                itemClass="appointment"
+            >
                 <div ws>
-                    <span text-tpl="{$record.time:time}" style="font-size: smaller; margin-right: 10px"/>
+                    <span text-tpl="{$record.time:datetime;HHmm}" style="font-size: smaller; margin-right: 10px; color: rgba(255, 255, 255, 0.5)"/>
                     <span text-tpl="{$record.text}"/>
                 </div>
             </List>

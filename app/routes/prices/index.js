@@ -71,7 +71,7 @@ export default (
                                     <Chart
                                         offset="5 -35 -40 10"
                                         axes={{
-                                            x: { type: TimeAxis, format: 'time' },
+                                            x: { type: TimeAxis, format: 'datetime;HHmmN' },
                                             y: { type: NumericAxis, vertical: true, secondary: true, format: 'n;0;2' }
                                         }}
                                     >

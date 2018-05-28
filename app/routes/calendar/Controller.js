@@ -8,7 +8,7 @@ export default class extends Controller {
 
         this.store.init('list', Array.from({length: 1000}, (_, i) => ({
             id: i + 1,
-            time: Date.now() + i * 15 * 60 * 1000,
+            time: Date.now() + (i - 200) * 45 * 60 * 1000,
             text: `${oneOf(["Appointment", "Lunch", "Meeting", "Breakfast", "Dinner"])} #${i+1}`
         })));
 
@@ -55,5 +55,13 @@ export default class extends Controller {
 
     onSelectDay(e, {store}) {
         store.copy('$record.date', "month");
+    }
+
+    onSelectNextDay() {
+        this.store.update('month', m => new Date(Date.parse(m) + 24 * 60 * 60 * 1000).toISOString());
+    }
+
+    onSelectPrevDay() {
+        this.store.update('month', m => new Date(Date.parse(m) - 24 * 60 * 60 * 1000).toISOString());
     }
 }
