@@ -11,7 +11,7 @@ const store = new Store();
 Auth.registerStore(store);
 
 //routing
-Url.setBaseFromScript("app*.js");
+//Url.setBaseFromScript("app*.js");
 History.connect(store, "url");
 
 //debug
