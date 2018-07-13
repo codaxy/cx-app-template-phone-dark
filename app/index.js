@@ -4,6 +4,10 @@ import {Timing, Debug} from "cx/util";
 enableCultureSensitiveFormatting();
 
 //css
+import "cx-theme-dark/dist/reset.css";
+import "cx-theme-dark/dist/widgets.css";
+import "cx-theme-dark/dist/svg.css";
+import "cx-theme-dark/dist/charts.css";
 import "./index.scss";
 
 //store
