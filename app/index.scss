@@ -1,13 +1,16 @@
 
 html {
-    background: white;
+    background: #7d7d7d;
 }
 
 body {
+    //remove max-width/height on a real project
     max-width: 500px;
     max-height: 1024px;
     background: black;
     margin: auto;
+    height: calc(100% - 10px);
+    margin-top: 5px;
 }
 
 @import "components/index";
