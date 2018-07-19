@@ -1,5 +1,5 @@
 import {Store} from "cx/data";
-import {Url, History, Widget, startHotAppLoop, enableCultureSensitiveFormatting} from "cx/ui";
+import {Url, History, startHotAppLoop, enableCultureSensitiveFormatting} from "cx/ui";
 import {Timing, Debug} from "cx/util";
 enableCultureSensitiveFormatting();
 
@@ -19,9 +19,8 @@ Auth.registerStore(store);
 History.connect(store, "url");
 
 //debug
-Widget.resetCounter();
-Timing.enable("app-loop");
-Debug.enable("app-data");
+//Timing.enable("app-loop");
+//Debug.enable("app-data");
 
 //app loop
 import Routes from "./routes";
